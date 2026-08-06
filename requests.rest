@@ -1,0 +1,14 @@
+
+###
+# curl -X POST http://localhost:3001/api/persons 
+#-H "Content-Type: application/json" 
+#-d '{"name":"John","number":"12345"}'
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "John",
+  "number": "123452"
+}
+
+###
