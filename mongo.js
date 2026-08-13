@@ -9,22 +9,22 @@ mongoose.set('strictQuery', false)
 mongoose.connect(url, { family: 4 })
 
 const nameSchema = new mongoose.Schema({
-    name: {
-        type:String,
-        required:true,
-        minlength:3,
-    },
-    number: {
-        type:String,
-        required:true,
-        minlength:8,
-        validate: {
-            validator:function(v){
-                return /^\d{2,3}-\d+$/.test(v)
-            },
-            message: props => `${props.value} is not a valid phone number`
-        }
-    },
+  name: {
+    type:String,
+    required:true,
+    minlength:3,
+  },
+  number: {
+    type:String,
+    required:true,
+    minlength:8,
+    validate: {
+      validator:function(v){
+        return /^\d{2,3}-\d+$/.test(v)
+      },
+      message: props => `${props.value} is not a valid phone number`
+    }
+  },
 })
 
 const Person = mongoose.model('Person', nameSchema)
